@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme{
+
+    --spacing-98: calc(var(--spacing) * 98);
+    --spacing-100: calc(var(--spacing) * 100);
+    --spacing-102: calc(var(--spacing) * 102);
+    --spacing-104: calc(var(--spacing) * 104);
+    --spacing-106: calc(var(--spacing) * 106);
+    --spacing-108: calc(var(--spacing) * 108);
+
+    --font-headers: "Bebas Neue", sans-serif, monospace;
+    --font-body: "Manrope", sans-serif, monospace;
+
+
+    /*Theme*/
+    --color-seat-number: #E2BB2D; /*Acento 1*/
+    --color-velvet-sofa: #750a3c; /*Acento 2 #9F1D41*/
+    --color-entry-faded: #f3e4cf; /*Fondo claro*/
+    --color-spotlight-blue: #1b4d69; /*Bordes, texto sutil*/
+    --color-bg-dark: #0F0303; /*Fondo oscuro*/
+
+    --aspect-poster: 2/3;/**/
+    --aspect-portrait: 9/16;
+}
+
+
+
+@layer base{
+  :root{
+    font-family: var(--font-body);
+    color:#750a3c;
+  }
+
+  h1,h2,h3{
+    font-family: var(--font-headers);
+    letter-spacing: .05rem;
+  }
+
+  p,a,li{
+    letter-spacing: .025rem;
+  }
+
+  main a{
+    @apply text-seat-number underline underline-offset-[4px];
+  }
+  main a:hover{
+    @apply no-underline text-entry-faded decoration-inherit;
+  }
+
+  button{
+    @apply rounded-2xl bg-spotlight-blue hover:bg-spotlight-blue/80 px-5 py-1 cursor-pointer;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@utility scrollbar-hide{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+  &::-webkit-scrollbar{
+    display:none
+  }
+}
+
+@utility scrollbar-show{
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-velvet-sofa) var(--color-bg-dark);
+
+  &::-webkit-scrollbar{
+    display:inherit;
+    width:1em;
+    height:.5em
+  }
+  &::-webkit-scrollbar-track{
+    background:var(--color-bg-dark);
+  }
+  &::-webkit-scrollbar-thumb{
+    background:var(--color-velvet-sofa);
+  }
+    
+}
+  
+ 
+
+
