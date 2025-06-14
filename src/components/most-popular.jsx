@@ -11,7 +11,7 @@ const MostPopular = () =>{
     const{data,isLoading,error} = useFetchMostPopular()
     
     if(error){
-        console.log('Error while fetching list of most popular films: ', error.message)
+        console.error('Error while fetching list of most popular films: ', error.message)
         return <></>
     }
     if(isLoading){

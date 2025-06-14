@@ -19,9 +19,6 @@ const ListDetails = () =>{
 
 
     const handleRemoveFromList = async(removeFilm) =>{
-        console.log(`Film: ${removeFilm.id}`)
-        console.log(`list ID: ${listId}`)
-        console.log(`Session: ${removeFilm.id,getValidSession()}`)
         await removeFromUserList(removeFilm.id,getValidSession()?.session_id,listId)
         queryClient.refetchQueries(['listDetails',data.id])
     }
@@ -32,7 +29,6 @@ const ListDetails = () =>{
 
     if(data){
         const {name,description,items} = data;
-        console.log(items)
         return(
             <div className='
                 md:w-11/12

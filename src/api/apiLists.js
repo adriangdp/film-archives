@@ -50,7 +50,7 @@ const fetchLists = async(userId, validSession, page) =>{
         if(!response.ok) throw new Error('Error while fetching lists',response.status)   
         return await response.json()
     }catch(err){
-        return console.log(err)
+        return console.error(err)
     }    
 }
 
@@ -62,7 +62,7 @@ const fetchListDetails = async(listId, page)=>{
         if(!response.ok) throw new Error('Error while fetching list details',response.status)
         return await response.json()  
     }catch(err){
-        return console.log(err)
+        return console.error(err)
     }
 }
 
@@ -84,7 +84,6 @@ export const addToUserList = async(filmId, sessionId, listId) =>{
 
 //Añadir de lista
 export const removeFromUserList = async(filmId, sessionId, listId) =>{
-    console.log(`Film_id:${filmId},sessionId:${sessionId},listId:${listId}`)
     const response = await fetch(
         uriRemoveFromList(sessionId,listId),
         postToListOptions(filmId)

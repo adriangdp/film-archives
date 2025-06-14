@@ -15,7 +15,6 @@ const PersonDetails = () =>{
     if(isError) {return (<p>Error</p>);}
     if(isLoading) {return (<p>Loading...</p>);}
     if(data) {
-        console.log(data)
         return(
             <div className='
                 w-full

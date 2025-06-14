@@ -14,7 +14,7 @@ const LoginButton = () =>{
         const response = fetch(uriRequestToken, getOptions)
         .then(data=>data.json())
         .then(token => {window.location.href = `${uriAuth}${token.request_token}?redirect_to=${redirect}`})
-        .catch(err=>console.log(`Error while fetching token: ${err}`)) 
+        .catch(err=>console.error(`Error while fetching token: ${err}`)) 
     }
 
     const handleLogOut = async() =>{

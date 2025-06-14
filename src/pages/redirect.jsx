@@ -17,7 +17,7 @@ const Redirect = () =>{
 useEffect(()=>{
 
     if(!token || hasFetched.current){
-        console.log('didnt find token')
+        console.error('didnt find token')
         return
     }
     hasFetched.current = true
