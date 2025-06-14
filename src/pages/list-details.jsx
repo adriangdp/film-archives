@@ -1,27 +1,38 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useGetListDetails } from '../api/apiLists';
+import { useQueryClient } from '@tanstack/react-query';
+import { useCredentials } from '../stores/authStore';
+import { removeFromUserList } from '../api/apiLists';
 
 import CardListDisplay from '../components/cards/card-list-display';
 import FilmCard from '../components/cards/film-card';
-import ListRemoverButton from '../components/ui/list-remover-button';
-import { useQueryClient } from '@tanstack/react-query';
+import RoundRemover from '../components/ui/round-remover-collection.component';
+
 
 const ListDetails = () =>{
     
     let {listId} = useParams()
+    const {getValidSession} = useCredentials()
     const queryClient = useQueryClient()
     const[page,setPage] = useState('1')
 
-    const {data,isLoading:detailsLoading,isError:detailsError} = useGetListDetails(listId,page)
 
-    const handleRemove = () =>{
+    const handleRemoveFromList = async(removeFilm) =>{
+        console.log(`Film: ${removeFilm.id}`)
+        console.log(`list ID: ${listId}`)
+        console.log(`Session: ${removeFilm.id,getValidSession()}`)
+        await removeFromUserList(removeFilm.id,getValidSession()?.session_id,listId)
         queryClient.refetchQueries(['listDetails',data.id])
     }
 
+
+    const {data,isLoading:detailsLoading,isError:detailsError} = useGetListDetails(listId,page)
+
+
     if(data){
         const {name,description,items} = data;
-
+        console.log(items)
         return(
             <div className='
                 md:w-11/12
@@ -47,7 +58,7 @@ const ListDetails = () =>{
                     {                    
                     items.map((film, i) =>
                         <FilmCard data={film} key={i}>
-                            <ListRemoverButton removeFilm={film} list={data} handleControl={handleRemove} />
+                            <RoundRemover item={film} handler={handleRemoveFromList} classes='absolute top-0 left-0' />
                         </FilmCard>
                     )}
                 </CardListDisplay>

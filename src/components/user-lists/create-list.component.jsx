@@ -28,7 +28,7 @@ const CreateList = ({handleRefetch}) =>{
         await createList(getValidSession()?.session_id,collectionName,collectionDesc)
         setCorrectInput(true)
         setIsOpen(!isOpen)
-        handleCreate()
+        handleRefetch()
 
     }
 

@@ -45,7 +45,6 @@ export const deleteList = async(sessionId, listId) =>{
 //Recibir listas de usuario
 
 const fetchLists = async(userId, validSession, page) =>{
-    console.log('meh')
     try{
         const response = await fetch(uriUserLists(userId,validSession,page),getOptions)
         if(!response.ok) throw new Error('Error while fetching lists',response.status)   
@@ -71,7 +70,6 @@ const fetchListDetails = async(listId, page)=>{
 
 export const addToUserList = async(filmId, sessionId, listId) =>{
 
-    console.log(`Film_id:${filmId},sessionId:${sessionId},listId:${listId}`)
     const response = await fetch(
         uriAddToList(sessionId,listId),
         postToListOptions(filmId)

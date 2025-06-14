@@ -24,7 +24,7 @@ const FilmCard = ({data:film, children}) =>{
             relative
             overflow-y-visible
         '>  
-            <Score score={film.vote_average} className='translate-x-10/12 -translate-y-5 '></Score>
+            <Score score={film.vote_average} className='translate-x-10/12 -translate-y-5 lg:-translate-y-4 '></Score>
             {children}
             <div onClick={() => {
                 navigate(

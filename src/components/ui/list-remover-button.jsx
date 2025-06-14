@@ -8,13 +8,8 @@ const ListRemoverButton = ( {removeFilm, list, handleControl=null}) =>{
     const {getValidSession} = useCredentials();
 
     const handleRemoveFromList = async() =>{
-            //e.preventDefault();
-            //e.stopPropagation();
             await removeFromUserList(removeFilm.id,getValidSession()?.session_id,list.id)
-            if(handleControl !== null){
-                handleControl(false)
-            }
-            
+            handleControl(false)  
     }
 
     return(

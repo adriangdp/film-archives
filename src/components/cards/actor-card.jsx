@@ -22,6 +22,10 @@ const ActorCard = ({data:actor}) =>{
                 cursor-pointer
                 snap-center         
                 flex-none
+                no-underline
+                text-inherit
+                hover:underline
+                decoration-seat-number
         '>
             {
                 actor.profile_path != null ?
@@ -37,7 +41,7 @@ const ActorCard = ({data:actor}) =>{
                 <img className='rounded-md bg-spotlight-blue aspect-poster' src={photoPlaceholder} alt='A placeholder for a missing picture of a person'/>
             }
             
-            <p className='mt-1 font-headers text-lg/5 text-seat-number '>{actor.name}</p>
+            <p className='mt-1 font-headers text-lg/5 text-seat-number'>{actor.name}</p>
             <p className='text-sm'>{actor.character}</p>
         </Link>
     )

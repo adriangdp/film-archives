@@ -60,7 +60,7 @@ const ListPreview = ({list}) =>{
                             list.item_count > 1 && <p className='text-seat-number'>{list.item_count} films</p>
                         }
                          </Link>
-                        <DeleteList list={list} handleRefetch={handleRefetch} />
+                        <DeleteList list={list} handleRefetch={handleRefetch}/>
                     </div>
     )
 }

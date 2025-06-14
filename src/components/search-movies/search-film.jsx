@@ -59,21 +59,22 @@ const SearchFilm = () =>{
                     gap-2
                     scrollbar-show
                 '>
-                    {data.results.map((item, idx)=>{
-                        const mediaType = item.media_type
-                        switch(mediaType){
-                            case 'movie': return(
-                                <Link to={`/films/${item.id}`} className='w-full flex justify-between'>
-                                    <p>{item.title}</p>
-                                    <p className='text-entry-faded'>Film</p>
-                                </Link>
-                            )
-                            case 'person': return(
-                                <Link to={`/people/${item.id}`} state={{from: location.pathname}} className='w-full flex justify-between'>
-                                    <p>{item.name}</p>
-                                    <p className='text-entry-faded'>Department: {item.known_for_department}</p>
-                                </Link>
-                            )
+                    {
+                        data.results.map((item, idx)=>{
+                            const mediaType = item.media_type
+                            switch(mediaType){
+                                case 'movie': return(
+                                    <Link to={`/films/${item.id}`} className='w-full flex justify-between'>
+                                        <p>{item.title} {item.release_date && `(${item.release_date.substring(0,4)})`}</p>                           
+                                        <p className='text-entry-faded'>Film</p>
+                                    </Link>
+                                )
+                                case 'person': return(
+                                    <Link to={`/people/${item.id}`} state={{from: location.pathname}} className='w-full flex justify-between'>
+                                        <p>{item.name}</p>
+                                        <p className='text-entry-faded'>Department: {item.known_for_department}</p>
+                                    </Link>
+                                )
                         }
                     })}
                 </div>
