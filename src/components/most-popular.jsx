@@ -15,7 +15,7 @@ const MostPopular = () =>{
         return <></>
     }
     if(isLoading){
-        return <p>loading most popular...</p>
+        return <></>
     }
     if(data){
         return(
@@ -24,7 +24,7 @@ const MostPopular = () =>{
 
                 { data.results.map((film, i) =>
                         <FilmCard key={i} data={film}>
-                            <AddToList film={film} positioning='absolute left-0 -top-2'/>
+                            <AddToList film={film}/>
                         </FilmCard>
                  )}
             </CardListDisplay>            

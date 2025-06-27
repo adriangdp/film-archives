@@ -1,22 +1,26 @@
 const Score = ({score, className}) =>{
 
+    const longScore = Math.floor(score*10)
     return(
-            <div className={`overflow-visible h-0 w-full ${className}`}>
+            <div className={`
+                w-[60px]
+                h-[60px]
+                aspect-square
+                p-2
+                bg-primary
+                rounded-full
+                flex
+                items-center
+                justify-center
+                ${className}`}>
                 <p className='
-                    text-center 
-                    text-xl
-                    bg-seat-number
-                    rounded-full
-                    text-velvet-sofa
-                    font-bold
-                    content-center                
-                    aspect-square
-                    w-15
-                    h-15
-                    p-2
+                    text-3xl
+                    text-secondary
+                    font-bold 
+                    tracking-tighter           
                 '>
-                    {(score*10).toFixed(1)}            
-                </p>
+                    {longScore}            
+                </p>                
             </div>
             
 

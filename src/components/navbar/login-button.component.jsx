@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import { getOptions, deleteSessionId } from '../api/apiOptions'
-import { uriRequestToken, uriNewAuth, uriDeleteSession, uriAuth } from '../api/apiRoutes'
-import { useCredentials } from '../stores/authStore'
+import { getOptions, deleteSessionId } from '@api/apiOptions'
+import { uriRequestToken, uriNewAuth, uriDeleteSession, uriAuth } from '@api/apiRoutes'
+import { useCredentials } from '@stores/authStore'
 
 
 
@@ -47,7 +47,7 @@ const LoginButton = () =>{
         if(user != null && user.username){
             return(
                 <button 
-                className='w-fit h-full bg-seat-number hover:bg-seat-number/80 text-velvet-sofa p-2 rounded-none' 
+                className='w-fit h-full bg-primary text-secondary hover:bg-primary/80 text-primary-1 p-2 rounded-none' 
                 onClick={handleLogOut}
             >
                 Log Out {user.username}
@@ -58,7 +58,7 @@ const LoginButton = () =>{
         return(
             
             <button 
-                className='w-fit h-full bg-seat-number text-velvet-sofa p-2 rounded-none' 
+                className='w-fit h-full bg-primary text-secondary hover:bg-primary/80 p-2 rounded-none' 
                 onClick={handleLogOut}
             >
                 Log out
@@ -70,7 +70,7 @@ const LoginButton = () =>{
     else{
         return(
             <button 
-                className='w-fit h-full bg-seat-number text-velvet-sofa px-4 rounded-none' 
+                className='w-fit h-full bg-primary text-secondary hover:bg-primary/80 px-4 rounded-none' 
                 onClick={handleToken}
             >
                 Log in TMDB

@@ -38,23 +38,22 @@ const ListDetails = () =>{
                 mt-12
                 md:mt-12
                 lg:mt-18
-                px-4 
+                px-4
                 md:px-0               
                 '>
                 <h2 className='         
                     text-5xl 
                     lg:text-5xl
                 '>{name}</h2>
-                { description !== null && <p>{description}</p>}
-
+                { description != null && description.length > 0 && <p>{description}</p>}
+                
                 <CardListDisplay 
                     oneLiner={false}
-                    className='gap-12'
                 >
                     {                    
                     items.map((film, i) =>
                         <FilmCard data={film} key={i}>
-                            <RoundRemover item={film} handler={handleRemoveFromList} classes='absolute top-0 left-0' />
+                            <RoundRemover item={film} handler={handleRemoveFromList} />
                         </FilmCard>
                     )}
                 </CardListDisplay>

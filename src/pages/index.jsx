@@ -22,12 +22,10 @@ const IndexPage = () =>{
                 
             '>
                 <h2 className='
-                    
-                     text-seat-number
                     text-xl
                     md:text-4xl
                     lg:text-5xl
-                    lg:text-center
+                    md:text-center
                 '>Explore and find your favourite films</h2>
                 <SearchFilm />
             </div>
@@ -42,11 +40,10 @@ const IndexPage = () =>{
                     px-4
                     lg:px-0
                     md:mx-auto
-                    lg:mb-4                   
+                    lg:mb-6                  
                     text-4xl
                     md:text-4xl
                     lg:text-5xl                    
-                    text-seat-number
                 '>
                     Most Popular
                 </h2>
@@ -67,7 +64,6 @@ const IndexPage = () =>{
                     '>
                         <h2 className='
                             text-4xl                            
-                            text-seat-number
                         '>
                             Your collections
                         </h2>    
@@ -84,7 +80,7 @@ const IndexPage = () =>{
                     md:w-11/12
                     lg:w-10/12
                 '>
-                    <h2 className='text-4xl text-seat-number'>Are you a film buff?</h2>
+                    <h2 className='text-4xl'>Are you a film buff?</h2>
                     <p> To see you collections, you need to log in.
                         You can create an <Link to='https://www.themoviedb.org/signup'>account</Link> if you don't already have one.
                     </p>

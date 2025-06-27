@@ -34,31 +34,32 @@ const ListPreview = ({list}) =>{
                             flex-col
                             justify-center
                             items-start                    
-                            bg-velvet-sofa                 
+                            bg-accent-2               
                             no-underline
                             border-2
                             border-transparent
-                            hover:border-seat-number'
+                        '
                         >
                         
                        
                         <h3 className='
                             text-3xl
-                            text-seat-number
                             group-hover:underline
                             
                         '>
                             {list.name}
                         </h3>
+
                         {
-                            list.item_count === 0 && <p className='text-seat-number'>No films yet!</p>
+                            list.item_count === 0 && <p>No films yet!</p>
                         }
                         {
-                            list.item_count === 1 && <p className='text-seat-number'>1 film</p>
+                            list.item_count === 1 && <p>1 film</p>
                         }
                         {
-                            list.item_count > 1 && <p className='text-seat-number'>{list.item_count} films</p>
+                            list.item_count > 1 && <p>{list.item_count} films</p>
                         }
+
                          </Link>
                         <DeleteList list={list} handleRefetch={handleRefetch}/>
                     </div>

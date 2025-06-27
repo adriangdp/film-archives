@@ -8,8 +8,6 @@ const ListAdderButton = ( {addFilm, list, handleControl}) =>{
 
 
     const handleAddToList = async() =>{
-        // e.preventDefault();
-        //e.stopPropagation();
         await addToUserList(addFilm.id,getValidSession()?.session_id,list.id) 
         handleControl(true) 
     }

@@ -10,15 +10,16 @@ const Redirect = () =>{
     const [searchParams] = useSearchParams()
     const token = searchParams.get('request_token')
     const {sessionId, setSessionId} = useCredentials();
+    const navigate = useNavigate(useNavigate);
 
-    //to remove
+    //Avoids errors when re-rendering happens while waiting for session ID
     const hasFetched = useRef(false)
 
 useEffect(()=>{
 
     if(!token || hasFetched.current){
         console.error('didnt find token')
-        return
+        navigate('/')
     }
     hasFetched.current = true
 

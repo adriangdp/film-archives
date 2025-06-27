@@ -13,7 +13,7 @@ const GoBack = () =>{
             }
             className='w-full'
         >
-                <img className='inline fill-blue-900' src={chevronLeft}/>
+                <img className='inline' src={chevronLeft}/>
             Go back
         </Link>
     );

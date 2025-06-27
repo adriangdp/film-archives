@@ -3,6 +3,8 @@ import { pathImageOriginal } from '../../api/apiRoutes'
 import { useCredentials } from '../../stores/authStore';
 import Score from '../ui/score.component';
 
+import posterPlaceholder from '@assets/missing_poster.webp'
+
 
 const FilmCard = ({data:film, children}) =>{
 
@@ -11,21 +13,23 @@ const FilmCard = ({data:film, children}) =>{
     const {user} = useCredentials();
     return(
         <div className='
-            group
-            mx-[12.5vw]  
+            group 
             md:mx-0
-            mt-5
+            mt-6
             snap-center   
             w-[75vw]
-            md:w-[18em]     
+            md:w-[18em]    
             h-fit             
             cursor-pointer     
             flex-none
             relative
-            overflow-y-visible
-        '>  
-            <Score score={film.vote_average} className='translate-x-10/12 -translate-y-5 lg:-translate-y-4 '></Score>
-            {children}
+            overflow-visible
+            z-2
+        '> 
+            <div className='absolute right-1 -top-6 lg:-top-2 w-0 h-full lg:-translate-y-4 flex flex-col items-center overflow-visible z-20'>
+                <Score score={film.vote_average}></Score>
+                {children}
+            </div>           
             <div onClick={() => {
                 navigate(
                     `/films/${film.id}`,
@@ -39,7 +43,7 @@ const FilmCard = ({data:film, children}) =>{
                 '
             >                     
                     <img 
-                        src={pathImageOriginal+film.poster_path}
+                        src={film.poster_path === null || film.poster_path.length < 1 ? posterPlaceholder : pathImageOriginal+film.poster_path}
                         className='                            
                             aspect-poster
                             bg-cover
@@ -47,9 +51,8 @@ const FilmCard = ({data:film, children}) =>{
                             bg-no-repeat
                             rounded-lg
                             object-cover
-                            border-3
-                            border-transparent
-                            group-hover:border-seat-number
+                            transition-transform
+                            group-hover:scale-105
                             '
                             title={`${film.title} film poster`}
                     />
@@ -59,7 +62,7 @@ const FilmCard = ({data:film, children}) =>{
                     mt-3                                                                 
                     text-3xl
                     lg:text-4xl 
-                    font-headers                                    
+                    font-headers                             
                 '>
                     {film.title}
                 </p>

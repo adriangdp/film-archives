@@ -71,22 +71,22 @@ const PersonDetails = () =>{
                             <h3>Personal information</h3>
                             <div className='flex flex-col'>
                             <div className=''>
-                                    <p className='font-body text-seat-number inline'>Known for:</p>
+                                    <p className='font-body text-accent-2 inline'>Known for:</p>
                                     <p className='inline mx-3'>{data.known_for_department}</p>
                                 </div>
                                 <div className=''>
-                                    <p className='font-body text-seat-number inline'>Birthday:</p>
+                                    <p className='font-body text-accent-2 inline'>Birthday:</p>
                                     <p className='inline mx-3'>{data.birthday && data.birthday.split('-').reverse().join('-')}</p>
                                 </div>
                                 {
                                     data.deathday &&
                                     <div className=''>
-                                        <p className='font-body text-seat-number inline'>Death:</p>
+                                        <p className='font-body text-accent-2 inline'>Death:</p>
                                         <p className='inline mx-3'>{data.deathday && data.deathday.split('-').reverse().join('-')}</p>
                                     </div>
                                 }
                                 <div className=''>
-                                    <p className='font-body text-seat-number inline'>Place of birth:</p>
+                                    <p className='font-body text-accent-2 inline'>Place of birth:</p>
                                     <p className='inline mx-3'>{data.place_of_birth}</p>
                                 </div>
                             </div>

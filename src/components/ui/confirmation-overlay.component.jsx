@@ -2,7 +2,7 @@
 
 const ConfirmationOverlay = ({title, children}) =>{
     return(
-        <div className='fixed top-0 left-0 w-screen h-screen bg-bg-dark/90 flex justify-center items-center'>
+        <div className='fixed top-0 left-0 w-screen h-screen bg-background/90 flex justify-center items-center z-10'>
             <div className='
                 w-full 
                 h-fit 
@@ -10,15 +10,15 @@ const ConfirmationOverlay = ({title, children}) =>{
                 md:h-fit
                 p-10 
                 border-3
-              border-seat-number
-              bg-velvet-sofa 
+              border-accent-2
+              bg-secondary
                 flex 
                 flex-col 
                 justify-center 
                 items-center
                 rounded-2xl
             '>
-                <h3 className='text-3xl md:text-5xl text-seat-number'>{title}</h3>
+                <h3 className='text-3xl md:text-5xl'>{title}</h3>
                     {children}
                 
             </div>

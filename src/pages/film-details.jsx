@@ -6,6 +6,7 @@ import GoBack from '../components/ui/go-back.component';
 import Score from '../components/ui/score.component';
 import CardListDisplay from '../components/cards/card-list-display';
 import ActorCard from '../components/cards/actor-card';
+import posterPlaceholder from '@assets/missing_poster.webp'
 
 
 const FilmDetails = () =>{
@@ -55,7 +56,7 @@ const FilmDetails = () =>{
                     md:gap-8
                 '>
                     <img 
-                        src={`${pathImageOriginal}${data.poster_path}`}
+                        src={data.poster_path === null || data.poster_path.length < 1 ? posterPlaceholder : `${pathImageOriginal}${data.poster_path}`}
                         alt={`${data.title} film poster`}
                         className='
                             rounded-md
@@ -85,8 +86,7 @@ const FilmDetails = () =>{
                                 '>{data.title}</h1>
                                 {data.title !== data.original_title ?
                                     <h1 className='
-                                        text-2xl
-                                        text-seat-number                  
+                                        text-2xl            
                                     '>{data.original_title}</h1>
                                 :
                                     <></>
@@ -105,11 +105,12 @@ const FilmDetails = () =>{
                                 <p className='
                                         font-headers
                                         text-xl
+                                        text-accent-2
                                 '>
                                     {p.job}
                                 </p>
                                 <p className='
-                                    text-seat-number
+                                    text-primary
                                 '>{p.name}</p>
                             </div>
                             )
@@ -120,9 +121,10 @@ const FilmDetails = () =>{
                                 <p className='
                                     font-headers
                                     text-xl
+                                    text-accent-2
                                 '>{p.job}</p>
                                 <p className='
-                                    text-seat-number
+                                    text-primary
                                 '>{p.name}</p>
                             </div>
                             )
@@ -130,16 +132,16 @@ const FilmDetails = () =>{
                         </div>                    
                         {/* Overview */}
                         <div className='my-8'>
-                            <h3 className='text-seat-number text-3xl'>Overview</h3>
+                            <h3 className='text-3xl'>Overview</h3>
                             <p className='my-3'>{data.overview}</p>
                         </div>
                         {/* Production */}
                         <div className='mt-8'>
-                            <h3 className='text-seat-number text-3xl'>Production</h3>
+                            <h3 className='text-3xl'>Production</h3>
                             <div className='flex flex-col flex-wrap'>
                                 
                                 <div className='my-2 mr-5'>
-                                    <p className='text-seat-number inline mr-2'>Country:</p>
+                                    <p className='text-accent-2 inline mr-2'>Country:</p>
                                     {
                                         data.origin_country?.map((c,i)=>
                                             <p key={i} className='inline mr-2'>{c}</p>
@@ -147,7 +149,7 @@ const FilmDetails = () =>{
                                     }
                                 </div>
                                 <div className='my-2 flex flex-wrap justify-start'>
-                                    <p className=' mr-2 inline text-seat-number'>Spoken languages:</p>
+                                    <p className=' mr-2 inline text-accent-2'>Spoken languages:</p>
                                     {
                                         data.spoken_languages?.map((l,i)=>
                                             <p key={i} className='inline mr-2'>{l.english_name}{i+1!==data.spoken_languages.length && "," || "."}</p>
@@ -155,13 +157,13 @@ const FilmDetails = () =>{
                                     }
                                 </div>
                                 <div className='my-2'>
-                                    <p className='text-seat-number inline'>Release date:</p>
+                                    <p className='text-accent-2 inline'>Release date:</p>
                                     <p className='inline mx-3'>{data.release_date && data.release_date.split('-').reverse().join('-')}</p>
                                 </div>
                             { 
                                 data.revenue != '0' ?
                                 <div className='my-2'>
-                                    <p className='text-seat-number inline'>Revenue:</p>
+                                    <p className='text-accent-2 inline'>Revenue:</p>
                                     <p className='inline mx-3'>{Intl.NumberFormat().format(Number(data.revenue))} $</p>
                                 </div>
                                 :
@@ -171,12 +173,12 @@ const FilmDetails = () =>{
                                 { 
                                 data.budget != '0' &&
                                 <div className='my-2'>
-                                    <p className='text-seat-number inline'>Budget:</p>
+                                    <p className='text-accent-2 inline'>Budget:</p>
                                     <p className='inline mx-3'>{Intl.NumberFormat().format(Number(data.budget))} $</p>
                                 </div>                    
                                 }
                                 <div className='my-2'>
-                                    <p className='text-seat-number inline'>Run time:</p>
+                                    <p className='text-accent-2 inline'>Run time:</p>
                                     <p className='inline mx-3'>{data.runtime && `${(data.runtime/60).toFixed()}h ${data.runtime%60}m`}</p>
                                 </div>
                                 
@@ -207,8 +209,9 @@ const FilmDetails = () =>{
                             data["watch/providers"]?.results?.ES?.buy.map((it,i)=> (<p className='text-velvet-sofa'>{it.provider_name}</p>))
 
                     }
-                </div>*/}
-                {/*<div>
+                </div>
+                
+                <div>
                     {
                         data.videos?.results?.map((it,i) =>
                             <div key={i}>

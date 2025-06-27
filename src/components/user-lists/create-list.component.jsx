@@ -47,14 +47,14 @@ const CreateList = ({handleRefetch}) =>{
                 lg:h-46
                 p-5
                 lg:p-8
-                bg-velvet-sofa/10                 
+                bg-transparent                 
                 rounded-lg
                 cursor-pointer
                 no-underline
                 border-2
-                border-velvet-sofa
+                border-accent-2
                 border-dashed
-                hover:border-seat-number
+                hover:border-accent-1                
                 z-10
             '            
             >   
@@ -71,34 +71,36 @@ const CreateList = ({handleRefetch}) =>{
                 >
                     <h3 className='
                         text-3xl
-                        text-seat-number
                         no-underline
-                        group-hover:underline              
+                        group-hover:underline  
+                        group-hover:text-accent-1            
                     '>
                         Create a list
                     </h3> 
                 </div>
                     
-                 {isOpen && <ConfirmationOverlay title='New collection'>
-                <div className='mt-4 flex flex-col items-center justify-center gap-5'>
-                    <form action={handleSubmit}>
-                        {!correctInput && <p>The list needs a name!</p>}
-                        <div className='flex flex-col gap-2'>
-                            <label htmlFor={input1Id}>List name</label>
-                            <input id={input1Id} name="Collection name" className='w-50 py-1 px-2 bg-bg-dark/50 rounded-lg'></input>
+                {isOpen && 
+                    <ConfirmationOverlay title='New collection'>
+                        <div className='mt-4 flex flex-col items-center justify-center gap-5'>
+                            <form action={handleSubmit}>
+                                {!correctInput && <p>The list needs a name!</p>}
+                                <div className='flex flex-col gap-2'>
+                                    <label htmlFor={input1Id}>List name</label>
+                                    <input id={input1Id} name="Collection name" className='w-50 py-1 px-2 text-bold bg-accent-1 rounded-md'></input>
+                                </div>
+                                <div className='flex flex-col gap-2'>
+                                    <label htmlFor={input2Id}>Description (optional)</label>
+                                    <input id={input2Id} name="Collection description" className='w-50 py-1 px-2 bg-accent-1 rounded-md'></input>
+                                </div>
+                                <div className='w-full mt-8 flex flex-col md:flex-row gap-5'>
+                                    <button className='w-full' type="submit">Confirm</button>       
+                                    <button className='w-full' onClick={handleClose}>Cancel</button> 
+                                </div>                                  
+                            </form>
                         </div>
-                        <div className='flex flex-col gap-2'>
-                            <label htmlFor={input2Id}>Description (optional)</label>
-                            <input id={input2Id} name="Collection description" className='w-50 py-1 px-2 bg-bg-dark/50 rounded-lg'></input>
-                        </div>
-                        <div className='w-full mt-8 flex flex-col md:flex-row gap-5'>
-                            <button className='w-full' type="submit">Confirm</button>       
-                            <button className='w-full' onClick={handleClose}>Cancel</button> 
-                        </div>                                  
-                    </form>
-                </div>
-                
-            </ConfirmationOverlay>}  
+                    
+                    </ConfirmationOverlay>
+                }  
             </div>
                       
         

@@ -25,11 +25,11 @@ const About = () =>{
             <p>
                 Uses <a href='https://www.themoviedb.org/'>TMDB</a>'s API, built with with the effort of an open community of cinephiles.
             </p>
-            <h3 className='my-3 text-3xl text-seat-number mt-10'>TMDB Account</h3>
+            <h3 className='my-3 text-3xl mt-10'>TMDB Account</h3>
             <p className='my-3'>Collections usage requires a <a href='https://www.themoviedb.org/'>TMDB</a> account. The application will 
                 request third-party access to read and modify user data. 
             </p>
-            <h3 className='my-3 text-3xl text-seat-number mt-10'>Security</h3>
+            <h3 className='my-3 text-3xl mt-10'>Security</h3>
             <p>
                 Film Archives uses localstorage to store your sessionID and user data in order to work.
                 This data is stored exclusively in your browser (and nowhere else!), and it does it through a extremely
@@ -41,7 +41,7 @@ const About = () =>{
                 <a href='https://www.themoviedb.org/'>TMDB</a> SessionID gives access to some of your user 
                 information, and allows certain actions such as adding or removing films and TV Shows from your collections.
             </p>
-            <h3 className='my-3 text-3xl text-seat-number mt-10'>Attribution</h3>
+            <h3 className='my-3 text-3xl mt-10'>Attribution</h3>
             <p className='my-3'>
                 Film Archives uses the TMDB API, but is not endorsed or certified by <a href='https://www.themoviedb.org/'>TMDB</a>.
                 All film data and images are sourced from TMDB.
