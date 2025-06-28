@@ -1,4 +1,5 @@
-import LoginButton from './login-button.component';
+import LoginButton from './user-button/login-button.component';
+import UserToggle from './user-button/user-toggle.component';
 import NavBarLink from './navbar-link.component';
 
 const NavBar = ({user}) =>{
@@ -30,8 +31,8 @@ const NavBar = ({user}) =>{
                 <NavBarLink to='/about'>
                         About
                 </NavBarLink>                  
-                <LoginButton />
-
+                {/*<LoginButton />*/}
+                <UserToggle />
             </div>
     );
 }
