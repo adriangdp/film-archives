@@ -36,11 +36,10 @@ const About = () =>{
                 simple obfuscation proccess to protect it from prying eyes.
             </p>
             <p className='my-3'>
-                SessionID gives access to some of your user information, and allows certain actions
-                such as adding or removing films and TV Shows from your collections.
                 <a href='https://www.themoviedb.org/'>TMDB</a> SessionID gives access to some of your user 
-                information, and allows certain actions such as adding or removing films and TV Shows from your collections.
+                information, and allows certain actions such as adding or removing films and TV Shows from your collections. For that reason, every 4 hours the application logs out and removes any data locally stored.
             </p>
+
             <h3 className='my-3 text-3xl mt-10'>Attribution</h3>
             <p className='my-3'>
                 Film Archives uses the TMDB API, but is not endorsed or certified by <a href='https://www.themoviedb.org/'>TMDB</a>.

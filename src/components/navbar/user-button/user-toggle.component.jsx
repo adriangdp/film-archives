@@ -51,25 +51,34 @@ const UserToggle = () =>{
     },[user])
 
     return(
-        <div className='relative z-8'>
+        <div className='grow-0 relative w-3/12 md:w-2/12 lg:w-18 h-full lg:mr-[5px] overflow-visible z-8'>
             <button 
-                className='w-fit h-full bg-primary text-secondary hover:bg-primary/80 text-primary-1 p-2 rounded-none' 
+                className='w-full h-full py-2 text-secondary bg-transparent text-primary-1 rounded-none flex justify-center ' 
                 onClick={()=>setOpen(!open)}
             >
-                {open ? <img src={menuButton} className='transition-transform rotate-[-90deg]'/>:<img src={menuButton} className='rotate-[0deg]'/>}
+                {
+                    !isUserSession() ? 
+                    
+                        open ? <img src={menuButton} className='transition-transform rotate-[-90deg]'/>:<img src={menuButton} className='rotate-[0deg]'/>
+                    :
+                    <UserImage user={user} includeUsername={false}/>
+                    
+                }            
 
             </button>
             { open && 
-                <div className='absolute right-0 min-w-40 w-fit px-5 bg-secondary flex flex-col items-center justify-start'>
+                <div className='absolute right-0 lg:-right-[5px] bg-primary min-w-40 w-fit py-0 px-5 flex flex-col items-center'>
+                    
                     {
                         isUserSession() &&
-                        <UserImage user={user} />
-                    }
-                    <div className='px-3 py-3 w-full border-b-1 border-primary text-center'>
-                        <LoginButton isUserSession={isUserSession} handleToken={handleToken} handleLogOut={handleLogOut} />
+                        <div className='px-3 py-3 w-full border-b-1 border-t-1 border-secondary text-center '>
+                            <p className='text-secondary'>{user.username}</p>
                         </div>
-                    
-                    <div></div>
+                    }
+                    <div className='px-3 py-3 w-full text-center'>
+                        <LoginButton isUserSession={isUserSession} handleToken={handleToken} handleLogOut={handleLogOut} />
+                    </div>
+
                 </div>
             }
         </div>

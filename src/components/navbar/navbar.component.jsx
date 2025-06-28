@@ -6,32 +6,32 @@ const NavBar = ({user}) =>{
     return(
             <div className={`
                 h-14
-                px-0
-                md:px-4                
-                bg-secondary
+                px-0               
+                bg-primary
                 flex
-                flex-grow-0
                 items-center
                 justify-between
                 md:justify-start
                 gap-3
                 md:gap-6
-                text-primary     
+                text-secondary     
                 `                
-            }>   
-                <NavBarLink to='/'>
+            }> 
+                <div className='flex justify-start grow-1'>
+                    <NavBarLink to='/'>
                     Home
-                </NavBarLink>         
-                { 
-                    user !== null &&
-                    <NavBarLink to='/user/lists'>
-                        Collections
-                    </NavBarLink>  
-                }
-                <NavBarLink to='/about'>
-                        About
-                </NavBarLink>                  
-                {/*<LoginButton />*/}
+                    </NavBarLink>         
+                    { 
+                        user !== null &&
+                        <NavBarLink to='/user/lists'>
+                            Collections
+                        </NavBarLink>  
+                    }
+                    <NavBarLink to='/about'>
+                            About
+                    </NavBarLink>       
+                </div>  
+                           
                 <UserToggle />
             </div>
     );

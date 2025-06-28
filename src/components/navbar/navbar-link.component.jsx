@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 const NavBarLink = ({to:uri, children}) =>{
     return(
         <Link to={uri} 
-                    className='
-                        w-1/3
-                        md:w-fit
-                        py-2 
-                        px-2
+                    className='  
+                        py-2                   
+                        mx-3
                         text-center
                         md:text-start
                         decoration-dotted

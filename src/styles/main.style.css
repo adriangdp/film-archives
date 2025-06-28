@@ -75,7 +75,7 @@
   }
 
   button{
-    @apply rounded-2xl text-secondary bg-accent-2 hover:text-primary hover:bg-secondary px-5 py-1 cursor-pointer;
+    @apply rounded-2xl text-secondary bg-accent-2 hover:text-primary hover:bg-secondary px-5 py-1 transition-transform hover:scale-110 cursor-pointer;
   }
 }
 

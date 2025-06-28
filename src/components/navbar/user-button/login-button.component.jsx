@@ -9,11 +9,11 @@ import { useCredentials } from '@stores/authStore'
 const LoginButton = ({isUserSession,handleToken, handleLogOut}) =>{
 
     return(
-        <div>
+        <div className='text-nowrap'>
             {isUserSession()?
-                <button onClick={handleLogOut} className='bg-transparent text-accent-2 transition-transform hover:scale-110'>Log Out</button>
+                <button onClick={handleLogOut} className='bg-transparent text-accent-1'>Log Out</button>
                 :
-                <button onClick={handleToken} className='bg-transparent text-accent-2 transition-transform hover:scale-110'>Log In</button>
+                <button onClick={handleToken} className='bg-transparent text-accent-1'>Log In</button>
             }
         </div>
     )
