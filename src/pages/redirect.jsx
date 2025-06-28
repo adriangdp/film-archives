@@ -12,27 +12,23 @@ const Redirect = () =>{
     const {sessionId, setSessionId} = useCredentials();
     const navigate = useNavigate(useNavigate);
 
-    //Avoids errors when re-rendering happens while waiting for session ID
-    const hasFetched = useRef(false)
-
 useEffect(()=>{
 
-    if(!token || hasFetched.current){
-        console.error('didnt find token')
-        navigate('/')
-    }
-    hasFetched.current = true
-
     const fetchSessionID = async() =>{      
- 
-        const response = await fetch(uriNewAuth,requestSessionIdOptions(token))
-        const sessionData = await response.json()
-        await setSessionId(sessionData)          
-        window.location.href = window.location.origin
-        }
+        try{
+            const response = await fetch(uriNewAuth,requestSessionIdOptions(token))
+            const sessionData = await response.json()
+            await setSessionId(sessionData)          
+            window.location.href = window.location.origin
+        }   
+        catch (error){
+            throw new Error(error)
+        }      
+    }
 
     fetchSessionID();
 },[])
+
 }
 
 export default Redirect
