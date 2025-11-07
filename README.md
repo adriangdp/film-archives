@@ -1,6 +1,6 @@
 # Film Archives
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f1d3d010-24ce-46a6-82b0-398bc54e90c4/deploy-status)](https://app.netlify.com/projects/filmarchives/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f1d3d010-24ce-46a6-82b0-398bc54e90c4/deploy-status)](https://filmarchives.netlify.app/) 
 ![Size](https://img.shields.io/github/repo-size/aidanarr/nanas-quest)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)
