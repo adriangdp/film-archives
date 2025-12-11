@@ -38,7 +38,7 @@ const ActorCard = ({data:actor}) =>{
                         
             
                 :
-                <img className='rounded-md bg-spotlight-blue aspect-poster' src={photoPlaceholder} alt='A placeholder for a missing picture of a person'/>
+                <img className='rounded-md bg-spotlight-blue aspect-poster' src={photoPlaceholder} alt="A placeholder for a person' missing picture"/>
             }
             
             <p className='mt-1 font-headers text-lg/5'>{actor.name}</p>
