@@ -53,12 +53,14 @@
   p,a,li,em,input,label{
     @apply tracking-[.085rem] md:tracking-[.175rem]
   }
-  main a, footer a{  
-    @apply underline underline-offset-4 decoration-1
+
+  a{
+    @apply underline-offset-4
   }
 
+
   main a, footer a{
-    @apply underline text-primary hover:text-accent-2 decoration-primary hover:decoration-accent-2
+    @apply  underline decoration-1 text-primary hover:text-accent-2 decoration-primary hover:decoration-accent-2 
   }
 
   button{
