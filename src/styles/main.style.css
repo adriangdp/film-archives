@@ -77,6 +77,10 @@
   button{
     @apply rounded-2xl text-secondary bg-accent-2 hover:text-primary hover:bg-secondary px-5 py-1 transition-transform hover:scale-110 cursor-pointer;
   }
+
+  button.plainbtn{
+    @apply rounded-none px-0 py-0 bg-transparent
+  }
 }
 
 @utility scrollbar-hide{
