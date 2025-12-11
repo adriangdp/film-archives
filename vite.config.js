@@ -21,12 +21,10 @@ export default defineConfig({
 
     },
   },
-  server:{
-    port:3000,
-    open:true
-  },
-  preview:{
-    port:3001,
-  }
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: './src/test/setup.js'
+    }
 
 })
