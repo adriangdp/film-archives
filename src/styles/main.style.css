@@ -40,38 +40,25 @@
 
 @layer base{
   :root{
-    font-family: var(--font-body);
-    background-color: var(--color-background);   
+    @apply font-body bg-background
   }
-  h1,h2,h3,h4,h5{
-    color:var(--color-primary);
+  h1,h2,h3,h4,h5,p,li,em,input,label,span{
+    @apply text-primary
   }
 
   h1,h2,h3{
-    font-family: var(--font-headers);
-    letter-spacing: .05rem;
+    @apply text-xl md:text-4xl lg:text-5xl font-headers tracking-[.15rem] md:tracking-[.225rem]
   }
 
   p,a,li,em,input,label{
-    letter-spacing: .025rem;
+    @apply tracking-[.085rem] md:tracking-[.175rem]
   }
-
-  p,li,em,input,label{
-    color:var(--color-primary);
-  }
-  
   main a, footer a{  
-    text-underline-offset: 4px;
-    text-decoration-thickness: 1px;    
+    @apply underline underline-offset-4 decoration-1
   }
 
   main a, footer a{
-    color:var(--color-primary);
-    text-decoration: underline dotted var(--color-accent-2);
-    &:hover{
-      color:var(--color-accent-2);
-      text-decoration-color: var(--color-accent-2);      
-    }
+    @apply underline text-primary hover:text-accent-2 decoration-primary hover:decoration-accent-2
   }
 
   button{
