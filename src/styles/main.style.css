@@ -79,7 +79,7 @@
   }
 
   button.plainbtn{
-    @apply rounded-none px-0 py-0 bg-transparent
+    @apply rounded-none px-0 py-0 bg-transparent transition-none hover:scale-100
   }
 }
 

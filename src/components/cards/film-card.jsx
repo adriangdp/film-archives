@@ -16,7 +16,7 @@ const FilmCard = ({data, children}) =>{
                 <Score score={vote_average}></Score>
                 {children}
             </div>           
-            <div onClick={() => {1 
+            <div onClick={() => { 
                 navigate(
                     `/films/${id}`,
                     {
