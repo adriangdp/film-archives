@@ -11,13 +11,13 @@ const IndexPage = () =>{
     return(
         <>
             <div className='px-4 mt-12 md:mx-auto md:my-12 lg:my-18 md:w-11/12 lg:w-10/12'>
-                <h2 className='text-xl md:text-4xl lg:text-5xl md:text-center'>
+                <h2 className='md:text-center'>
                     Explore and find your favourite films
                 </h2>
                 <SearchFilm />
             </div>
             <div className='mt-6 md:mt-8 lg:mt-18'>
-                <h2 className='md:w-11/12 lg:w-10/12 px-4 lg:px-0 md:mx-auto lg:mb-6 text-4xl md:text-4xl lg:text-5xl'>
+                <h2 className='md:w-11/12 lg:w-10/12 px-4 lg:px-0 md:mx-auto lg:mb-6'>
                     Most Popular
                 </h2>
                 <MostPopular />
